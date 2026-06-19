@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <script src="script.js" defer></script>
+    <title>ROCKDISC - ABOUT</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ROCKDISC</div>
+        <div class="header-btn" id="headerBtn">
+            <button class="btn-log">LOGIN</button>
+            <button class="btn-sign">SIGNIN</button>
+        </div>
+        <div class="user-chip" id="userChip">
+            <div class="avatar" id="avatarLetter">G</div>
+            <span id="userGreeting">สวัสดี</span>
+            <button class="btn-logout" id="btnLogout">LOGOUT</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="disc.html">DISC</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div><img src="img/bell.png" alt="#" class="notice"></div>
+    </nav>
+
+    <!-- กล่อง banner บนสุด -->
+    <div class="about-banner">
+        <span>ABOUT ROCKDISC</span>
+    </div>
+
+    <!-- กล่องเนื้อหา -->
+    <div class="about-content">
+        <h1>เราคือใคร</h1>
+        <p>
+            ROCKDISC คือพื้นที่สำหรับคนที่รักเพลงร็อคทุกยุคทุกสมัย
+            ตั้งแต่ยุคบุกเบิกจนถึงวงการร็อคปัจจุบัน รวมอัลบั้มและรีวิวไว้ในที่เดียว
+        </p>
+        <p>
+            เราเชื่อว่าเพลงร็อคสักเพลงเปลี่ยนอารมณ์วันแย่ๆ ให้ดีขึ้นได้จริง
+            มาค้นหาแผ่นเสียงที่ใช่ของคุณได้เลย
+        </p>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-head">
+                <div class="label">ROCKDISC</div>
+            </div>
+            <div class="tabs">
+                <div class="tab" id="tabLogin" onclick="switchTab('login')">LOGIN</div>
+                <div class="tab" id="tabSignup" onclick="switchTab('signup')">SIGN UP</div>
+            </div>
+            <div class="form-pane" id="paneLogin">
+                <form onsubmit="return handleLogin(event)">
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" required placeholder="you@example.com">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••••">
+                    </div>
+                    <button class="submit-btn" type="submit">เข้าสู่ระบบ</button>
+                </form>
+                <div class="switch-line">ยังไม่มีบัญชี? <a onclick="switchTab('signup')">สมัครสมาชิก</a></div>
+            </div>
+            <div class="form-pane" id="paneSignup">
+                <form onsubmit="return handleSignup(event)">
+                    <div class="field">
+                        <label>ชื่อผู้ใช้</label>
+                        <input type="text" id="signupName" required placeholder="Your name">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="signupEmail" required placeholder="you@example.com">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" required minlength="6" placeholder="อย่างน้อย 6 ตัวอักษร">
+                    </div>
+                    <div class="error-msg" id="signupError">กรุณากรอกข้อมูลให้ครบและรหัสผ่านอย่างน้อย 6 ตัวอักษร</div>
+                    <button class="submit-btn" type="submit">สมัครสมาชิก</button>
+                </form>
+                <div class="switch-line">มีบัญชีอยู่แล้ว? <a onclick="switchTab('login')">เข้าสู่ระบบ</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+</body>
+</html>

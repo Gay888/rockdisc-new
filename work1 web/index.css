@@ -1,0 +1,352 @@
+/* ตัวแปรสี ใช้กับโมดอล login/signup ด้านล่าง */
+:root {
+    --navy: #222831;
+    --yellow: yellow;
+    --red: red;
+    --paper: #fdfaf2;
+    --ink: #1c1c1c;
+    --muted: #8a8a8a;
+}
+
+/* reset */
+* { padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {font-family: Arial, sans-serif;
+      background-color: gray;
+}
+
+/* กล่องส่วนหัวเว็บ */
+header {background-color: #222831;
+        display: flex; /*ทำให้เนื้อหาเป็นแนวนอน*/
+        justify-content: space-between; /*ทำให้เนื้อหาห่างกัน*/
+        align-items: center;
+        padding: 20px 30px;
+}
+
+/* โลโก้ */
+.logo { color: yellow;
+        font-size: 28px;
+        font-weight: bold; /*ทำให้ตัวอักษรเป็นตัวหนา*/
+        font-style: italic; /*ตัวเอียง*/
+        letter-spacing: 2px; /*ระยะห่างระหว่างตัวอักษร*/
+        font-family: impact, arial, sans-serif;
+}
+
+/* กล่องปุ่มด้านขวา */
+.header-btn {   display: flex;
+                gap: 15px; /*ระยะห่างระหว่าง (ตัวปุ่ม)*/
+}
+
+/* ซ่อนกล่องปุ่ม login/signin หลังจาก login/สมัครสำเร็จ */
+.header-btn.hidden { display: none; }
+
+/* ตัวปุ่ม โดยกำหนดทั้งสองปุ่มพร้อมกัน */
+.btn-log , .btn-sign {  background-color: yellow;
+                        color: black;
+                        border: 3px solid red; /*ตัวขอบกำหนด ความหนา 3 , สไตล์ขอบหนา , สีแดง*/
+                        border-radius: 25px;
+                        padding: 8px 25px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        cursor: pointer; /* เปลี่ยน cursor เป็นรูปมือเมื่อเอาเมาส์ไปชี้ */
+}
+
+/* การแสดงผลเมื่อเม้าชี้ */
+.btn-log:hover , .btn-sign:hover {  background-color: gold;
+                                    color: black;
+                                    border-color: #7B2525;
+}
+
+/* กล่องที่โชว์แทนปุ่ม หลังจาก login/signup สำเร็จ */
+.user-chip {    display: none;
+                align-items: center;
+                gap: 10px;
+                color: yellow;
+                font-family: impact, arial, sans-serif;
+                letter-spacing: 1px;
+}
+
+.user-chip.show { display: flex; }
+
+.user-chip .avatar {   width: 34px;
+                        height: 34px;
+                        border-radius: 50%;
+                        background-color: yellow;
+                        color: #222831;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-family: impact, arial, sans-serif;
+}
+
+/* เมนูนำทาง */
+nav {background-color: white;
+     height: 50px;
+     display: flex;
+     align-items: center;
+        border-color: black;
+        justify-content: space-between;
+
+}
+
+.notice {width: 30px;
+        height: 30px;
+        overflow: hidden;
+        margin: 30px;}
+
+/* กล่องของรายการเมนู */
+ul {display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none; /*ลบจุดออก*/
+    gap: 15px;
+    
+}
+
+/* รายการเมนูในกล่อง */
+ul li { margin-left: 10px;
+        align-items: center;
+        display: flex;
+        }
+
+/* ตัวเนื้อหาในรายการ */
+ul li a {text-decoration: none;
+         color: black;
+         padding: 12px 30px;
+         font-family: impact, arial, sans-serif;
+         letter-spacing: 1px;}
+
+ul li a:hover {background-color: rgb(198, 198, 198);
+             border-color: black;
+}
+
+/* กล่องเนื้อหาคลุม 3 คอลัม */
+.main-con {     display: grid;
+                grid-template-columns: 220px auto 1fr; /*ซ้ายคงที่ 220 / กลางพอดีตัวรูป (ไม่กินพื้นที่เกิน) / ขวาเป็น 1fr ดึงข้อความเข้าใกล้รูป*/
+                margin-top: 50px;
+                margin-left: 50px;
+}
+
+/* 2 รูปฝั่งซ้าย */
+.band-pic {     display: flex;
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 12px;
+                overflow: hidden;
+                margin-top: 10px;
+                margin-left: 10px;
+                
+}
+
+/* ตัวรูป */
+.def,.lin {     width: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 3px solid black;
+}
+
+/* 1 รูปตรงกลาง */
+.band-center {  min-width: 0;
+                padding: 10px;
+                display: flex;
+                align-items: stretch;
+}
+
+/* ตัวรูป */
+.korn { width: 400px;
+        height: 430px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid black;
+}
+
+/* เนื้อหาฝั่งขวา จัดให้ขยับเข้าใกล้รูปตรงกลาง แต่ยังมีระยะห่างพอดี */
+.right-panel {  display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 30px 30px 30px 22px;
+                margin-left: 50px;
+}
+
+.promo {        max-width: 320px;
+                text-align: left;
+}
+
+.promo-eyebrow {    display: block;
+                    font-family: impact, arial, sans-serif;
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: var(--ink);
+                    margin-bottom: 16px;
+}
+
+.promo-text {   font-size: 18px;
+                line-height: 1.85;
+                color: #2b2b2b;
+                margin-bottom: 16px;
+}
+
+.promo-text:last-child { margin-bottom: 0; }
+
+/* ================= ป๊อปอัป login / signup ================= */
+
+.overlay{
+    position:fixed; inset:0;
+    background:rgba(10,10,12,0.72);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+    padding:20px;
+  }
+  .overlay.open{ display:flex; }
+  .modal{
+    background:var(--paper);
+    width:380px;
+    max-width:100%;
+    border-radius:10px;
+    border:3px solid var(--navy);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    position:relative;
+    overflow:hidden;
+  }
+  .modal::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:6px;
+    background:repeating-linear-gradient(90deg,var(--yellow) 0 16px, var(--red) 16px 32px);
+  }
+  .modal-head{
+    padding:26px 26px 0 26px;
+    text-align:center;
+  }
+  .modal-head .label{
+    font-family: impact, arial, sans-serif;
+    font-size:26px;
+    color:var(--navy);
+    letter-spacing:1px;
+  }
+  .modal-close{
+    position:absolute; top:12px; right:14px;
+    background:none; border:none; font-size:20px;
+    cursor:pointer; color:var(--navy); font-weight:700;
+  }
+  .tabs{
+    display:flex;
+    margin:18px 26px 0 26px;
+    border-bottom:2px solid #ddd5c0;
+  }
+  .tab{
+    flex:1;
+    text-align:center;
+    padding:10px 0;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    cursor:pointer;
+    color:var(--muted);
+    border-bottom:3px solid transparent;
+    margin-bottom:-2px;
+  }
+  .tab.active{
+    color:var(--ink);
+    border-bottom:3px solid var(--red);
+  }
+  .form-pane{ display:none; padding:22px 26px 28px 26px; }
+  .form-pane.active{ display:block; }
+  .field{ margin-bottom:14px; }
+  .field label{
+    display:block;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.5px;
+    color:#555;
+    margin-bottom:5px;
+    text-transform:uppercase;
+  }
+  .field input{
+    width:100%;
+    padding:10px 12px;
+    border:1.5px solid #cfc7b2;
+    border-radius:6px;
+    font-family: Arial, sans-serif;
+    font-size:14px;
+    background:#fff;
+  }
+  .field input:focus{
+    outline:none;
+    border-color:var(--red);
+  }
+  .submit-btn{
+    width:100%;
+    margin-top:6px;
+    padding:11px 0;
+    background:var(--yellow);
+    border:2px solid var(--red);
+    border-radius:999px;
+    font-family: Arial, sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.5px;
+    cursor:pointer;
+  }
+  .submit-btn:hover{ filter:brightness(0.97); }
+  .switch-line{
+    text-align:center;
+    font-size:12px;
+    color:#666;
+    margin-top:14px;
+  }
+  .switch-line a{ color:var(--red); font-weight:600; text-decoration:none; cursor:pointer; }
+  .error-msg{
+    color:var(--red);
+    font-size:12px;
+    margin-top:-6px;
+    margin-bottom:10px;
+    display:none;
+  }
+  .toast{
+    position:fixed;
+    bottom:24px; left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--navy);
+    color:var(--yellow);
+    padding:13px 24px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.4px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+    z-index:60;
+    border-left:4px solid var(--yellow);
+  }
+  .toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  .btn-logout {
+    background-color: transparent;
+    color: yellow;
+    border: 2px solid yellow;
+    border-radius: 25px;
+    padding: 5px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: impact, arial, sans-serif;
+}
+
+.btn-logout:hover {
+    background-color: yellow;
+    color: #222831;
+}

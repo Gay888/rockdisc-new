@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="news.css">
+    <script src="script.js" defer></script>
+    <title>ROCKDISC - NEWS</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ROCKDISC</div>
+        <div class="header-btn" id="headerBtn">
+            <button class="btn-log">LOGIN</button>
+            <button class="btn-sign">SIGNIN</button>
+        </div>
+        <div class="user-chip" id="userChip">
+            <div class="avatar" id="avatarLetter">G</div>
+            <span id="userGreeting">สวัสดี</span>
+            <button class="btn-logout" id="btnLogout">LOGOUT</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="disc.html">DISC</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div><img src="img/bell.png" alt="#" class="notice"></div>
+    </nav>
+
+    <main>
+        <div class="main-con">
+
+            <!-- sidebar หมวดหมู่ -->
+            <div class="sidebar">
+                <p class="sidebar-title">หมวดหมู่</p>
+                <a href="#">เพลงใหม่</a>
+                <a href="#">เติมสินค้า</a>
+                <a href="#">ของหมดสต็อค</a>
+                <a href="#">วงใหม่</a>
+                <a href="#">ข่าวสารแต่ละวง</a>
+                <a href="#">แนวเพลงใหม่</a>
+                <a href="#">สัมภาษณ์วง</a>
+            </div>
+
+            <!-- เนื้อหาข่าว -->
+            <div class="content">
+
+                <h1>ข่าวสารวงการร็อค</h1>
+
+                <!-- การ์ดข่าว 1 -->
+                <div class="news-card">
+                    <div class="news-tag">วงใหม่</div>
+                    <h2 class="news-title">Linkin Park ประกาศนักร้องนำคนใหม่ Emily Armstrong</h2>
+                    <p class="news-date">15 มิถุนายน 2024</p>
+                    <p class="news-body">
+                        หลังจากห่างหายไปนานหลายปี Linkin Park ได้ประกาศกลับมาพร้อมนักร้องนำหญิงคนใหม่
+                        Emily Armstrong จาก Dead Sara พร้อมทัวร์คอนเสิร์ตรอบโลกและอัลบั้มใหม่ที่กำลังจะออก
+                    </p>
+                </div>
+
+                <!-- การ์ดข่าว 2 -->
+                <div class="news-card">
+                    <div class="news-tag">เพลงใหม่</div>
+                    <h2 class="news-title">Deftones ปล่อยซิงเกิลใหม่ล่าสุด พร้อมทีเซอร์อัลบั้ม</h2>
+                    <p class="news-date">2 มิถุนายน 2024</p>
+                    <p class="news-body">
+                        Deftones เซอร์ไพรส์แฟนๆ ด้วยการปล่อยซิงเกิลใหม่แบบไม่มีการประกาศล่วงหน้า
+                        บทเพลงใหม่ยังคงกลิ่นอาย alternative metal ที่แฟนๆ คุ้นเคย ผสมเสียงแอมเบียนต์อันเป็นเอกลักษณ์
+                    </p>
+                </div>
+
+                <!-- การ์ดข่าว 3 -->
+                <div class="news-card">
+                    <div class="news-tag">สัมภาษณ์วง</div>
+                    <h2 class="news-title">Jonathan Davis แห่ง KoRn เผยแนวทางอัลบั้มถัดไป</h2>
+                    <p class="news-date">28 พฤษภาคม 2024</p>
+                    <p class="news-body">
+                        Jonathan Davis ให้สัมภาษณ์กับ Kerrang! ว่าอัลบั้มใหม่ของ KoRn
+                        จะมืดและหนักกว่าเดิม โดยได้รับแรงบันดาลใจจากช่วงเวลาที่ยากลำบากในชีวิตส่วนตัว
+                    </p>
+                </div>
+
+                <!-- การ์ดข่าว 4 -->
+                <div class="news-card">
+                    <div class="news-tag">เติมสินค้า</div>
+                    <h2 class="news-title">รีสต็อค! อัลบั้มไวนิล Deftones — White Pony กลับมาแล้ว</h2>
+                    <p class="news-date">20 พฤษภาคม 2024</p>
+                    <p class="news-body">
+                        White Pony ฉบับไวนิล 20th Anniversary ที่หมดไปอย่างรวดเร็ว
+                        ขณะนี้เติมสต็อคแล้วในจำนวนจำกัด สั่งจองได้ที่หน้า DISC ก่อนหมดอีกครั้ง
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-head">
+                <div class="label">ROCKDISC</div>
+            </div>
+            <div class="tabs">
+                <div class="tab" id="tabLogin" onclick="switchTab('login')">LOGIN</div>
+                <div class="tab" id="tabSignup" onclick="switchTab('signup')">SIGN UP</div>
+            </div>
+            <div class="form-pane" id="paneLogin">
+                <form onsubmit="return handleLogin(event)">
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="loginEmail" required placeholder="you@example.com">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" required placeholder="••••••••">
+                    </div>
+                    <button class="submit-btn" type="submit">เข้าสู่ระบบ</button>
+                </form>
+                <div class="switch-line">ยังไม่มีบัญชี? <a onclick="switchTab('signup')">สมัครสมาชิก</a></div>
+            </div>
+            <div class="form-pane" id="paneSignup">
+                <form onsubmit="return handleSignup(event)">
+                    <div class="field">
+                        <label>ชื่อผู้ใช้</label>
+                        <input type="text" id="signupName" required placeholder="Your name">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" id="signupEmail" required placeholder="you@example.com">
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" required minlength="6" placeholder="อย่างน้อย 6 ตัวอักษร">
+                    </div>
+                    <div class="error-msg" id="signupError">กรุณากรอกข้อมูลให้ครบและรหัสผ่านอย่างน้อย 6 ตัวอักษร</div>
+                    <button class="submit-btn" type="submit">สมัครสมาชิก</button>
+                </form>
+                <div class="switch-line">มีบัญชีอยู่แล้ว? <a onclick="switchTab('login')">เข้าสู่ระบบ</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+</body>
+</html>
